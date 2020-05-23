@@ -1,7 +1,13 @@
 #include "header.hpp"
 
+std::string HOST;
+std::string PORT_NETWORK;
+std::string PASSWORD_NETWORK;
+std::string PORT;
+std::string PASSWORD;
 fd_set current_sockets;
 int max_socket = 0;
+
 
 int     accept_new_connexion(int server_socket)
 {
@@ -30,6 +36,8 @@ void add_new_client(int server_socket)
 int     init_socket_server()
 {
     int socketServer = socket(AF_INET, SOCK_STREAM, 0);
+    if (socketServer == -1)
+        std::cout << "We have got a socket problem" << std::endl;
     struct sockaddr_in addrServer;
 
     addrServer.sin_addr.s_addr = inet_addr("192.168.1.61");
@@ -67,6 +75,8 @@ void send_message_to_all(int i, fd_set copy, int server_socket)
 int     main()
 {
     int server_socket = init_socket_server();
+    if (server_socket == -1)
+        return ;
     max_socket = server_socket + 1;
 
     fd_set copy;
