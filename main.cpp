@@ -76,7 +76,7 @@ int     main()
 {
     int server_socket = init_socket_server();
     if (server_socket == -1)
-        return ;
+        return (EXIT_FAILURE);
     max_socket = server_socket + 1;
 
     fd_set copy;
