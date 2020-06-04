@@ -23,6 +23,23 @@
 #include <algorithm>
 #include <pthread.h>
 
+#define BUFFER_SIZE 4000
+
+typedef struct	s_data
+{
+    bool        isArg1Provided;
+	std::string host;
+    std::string port_network;
+    std::string password_network;
+
+    int         port;
+    std::string password;
+}				t_data;
+
+/* --- Input --- */;
+int     check_input(int argc, char **argv, t_data *data);
+
+/* --- Utils --- */
 int     ft_strlen(char *str);
 void    ft_putstr(char *str);
 void    ft_fill_zero(char *str, int size);

@@ -1,5 +1,6 @@
 SRCS=	main.cpp \
 		utils_1.cpp \
+		input_check.cpp \
 
 OBJS= ${SRCS:.cpp=.o}
 

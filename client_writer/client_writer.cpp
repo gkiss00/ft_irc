@@ -3,13 +3,13 @@
 int     main()
 {
     int socketClient = socket(AF_INET, SOCK_STREAM, 0);
+    printf("Client created.\n");
     struct sockaddr_in addrClient;
-    addrClient.sin_addr.s_addr = inet_addr("192.168.1.61");
+    addrClient.sin_addr.s_addr = inet_addr("192.168.1.15");
     addrClient.sin_family = AF_INET;
     addrClient.sin_port = htons(30002);
-    printf("no connected\n");
     connect(socketClient, (const struct sockaddr *)&addrClient, sizeof(addrClient));
-    printf("connected\n");
+    printf("Client connected.\n");
 
     while(1)
     {

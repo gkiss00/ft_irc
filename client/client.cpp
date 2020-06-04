@@ -6,7 +6,7 @@ int     main()
 {
     int socketClient = socket(AF_INET, SOCK_STREAM, 0);
     struct sockaddr_in addrClient;
-    addrClient.sin_addr.s_addr = inet_addr("192.168.1.61");
+    addrClient.sin_addr.s_addr = inet_addr("192.168.1.15");
     addrClient.sin_family = AF_INET;
     addrClient.sin_port = htons(30002);
     printf("no connected\n");
